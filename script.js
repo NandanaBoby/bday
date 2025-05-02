@@ -28,6 +28,21 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 surprise.style.opacity = '1';
             }, 10);
+            // Show cake after 3 seconds of displaying the surprise
+            setTimeout(() => {
+                const cakeContainer = document.getElementById('cake-container');
+                cakeContainer.classList.remove('hidden');
+                cakeContainer.style.opacity = '1';
+            }, 3000);
+
+// Cake cutting interaction
+document.addEventListener('click', function(e) {
+    const cake = document.querySelector('.cake');
+    if (cake && e.target.closest('.cake') && !cake.classList.contains('clicked')) {
+        cake.classList.add('clicked');
+    }
+});
+
             
             // Bigger confetti burst
             confetti({
